@@ -16,9 +16,17 @@ Basic requirements:
 
 ### Experiments
 
-We separate the experiments based on followings: "prune_espn_finetune.py" (ESPN-Finetune) and "prune_espn_rewind.py" (ESPN-Rewind) for LeNet300, LeNet5-Caffe, ResNet32, and VGG19 for MNIST, Fashion-MNIST, CIFAR-10/100, and Tiny-ImageNet. 
+We include the codes for experiments conducted in the papers as following: 
 
-For ImageNet training, "prune_espn_imagenet_finetune.py" (ESPN-Finetune) and "prune_espn_imagenet_rewind.py" return a model and masking function. Then use "train_imagenet_finetune.py" or "train_imagenet_rewind.py" to train the network.
+`prune_espn_finetune.py`: ESPN-Finetune prunes (1) LeNet300, LeNet5-Caffe for MNIST/Fashion-MNIST, (2) VGG19, ResNet32 for CIFAR-10/100, (3) VGG19, ResNet32 for Tiny-ImageNet. 
+
+`prune_espn_rewind.py`: ESPN-Rewind prunes (1) LeNet300, LeNet5-Caffe for MNIST/Fashion-MNIST, (2) VGG19, ResNet32 for CIFAR-10/100, (3) VGG19, ResNet32 for Tiny-ImageNet. 
+
+`prune_espn_imagenet_finetune.py`: ESPN-Finetune pruning ResNet50 for ImageNet dataset. We use the pretrained model in Torchvision.
+
+`prune_espn_imagenet_rewind.py`: ESPN-Rewind pruning ResNet50 for ImageNet dataset. We use the untrained model in Torchvision.
+
+
 
 
 
