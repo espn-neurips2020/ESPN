@@ -102,12 +102,78 @@ ESPN_Finetune p=99%: `python prune_espn_finetune.py "fashion_mnist" "lenet_5_caf
 
 ESPN_Finetune p=99.6%: `python prune_espn_finetune.py "fashion_mnist" "lenet_5_caffe" "./output/fashion_mnist/lenet_5_caffe/" "./models/fashion_mnist/lenet_5_caffe/checkpoint.pth.tar" --logname "espn_finetune_fmnist_lenet_5_caffe_996percent.txt" --alpha 0.0003 --lr 0.05 --keep_ratio 0.004`
 
-### CIFAR10/100
+### CIFAR-10/100
 
+#### CIFAR-10/VGG19
 
+ESPN_Finetune p=95%: `python prune_espn_finetune.py "cifar10" "vgg19" "./output/cifar10/vgg19/" "./models/cifar10/vgg19/checkpoint.pth.tar" --logname "espn_finetune_cifar10_vgg19_95percent.txt" --lr 0.1 --alpha 8e-5 --keep_ratio 0.05`
 
+ESPN_Finetune p=98%: `python prune_espn_finetune.py "cifar10" "vgg19" "./output/cifar10/vgg19/" "./models/cifar10/vgg19/checkpoint.pth.tar" --logname "espn_finetune_cifar10_vgg19_98percent.txt" --lr 0.1 --alpha 8e-5 --keep_ratio 0.02`
 
+ESPN_Finetune p=99%: `python prune_espn_finetune.py "cifar10" "vgg19" "./output/cifar10/vgg19/" "./models/cifar10/vgg19/checkpoint.pth.tar" --logname "espn_finetune_cifar10_vgg19_99percent.txt" --lr 0.05 --alpha 0.00015 --keep_ratio 0.01`
 
+ESPN_Finetune p=99.5%: `python prune_espn_finetune.py "cifar10" "vgg19" "./output/cifar10/vgg19/" "./models/cifar10/vgg19/checkpoint.pth.tar" --logname "espn_finetune_cifar10_vgg19_995percent.txt" --lr 0.05 --alpha 0.0003 --keep_ratio 0.005`
 
+ESPN_Rewind p=95%: `python prune_espn_rewind.py "cifar10" "vgg19" "./output/cifar10/vgg19/" --epochs_warmup 10 --logname "espn_rewind_cifar10_vgg19_95percent.txt" --lr 0.1 --alpha 8e-5 --keep_ratio 0.05`
+
+ESPN_Rewind p=98%: `python prune_espn_rewind.py "cifar10" "vgg19" "./output/cifar10/vgg19/" --epochs_warmup 10 --logname "espn_rewind_cifar10_vgg19_98percent.txt" --lr 0.1 --alpha 8e-5 --keep_ratio 0.02`
+
+ESPN_Rewind p=99%: `python prune_espn_rewind.py "cifar10" "vgg19" "./output/cifar10/vgg19/" --epochs_warmup 10 --logname "espn_rewind_cifar10_vgg19_99percent.txt" --lr 0.1 --alpha 0.00013 --keep_ratio 0.01`
+
+ESPN_Rewind p=99.5%: `python prune_espn_rewind.py "cifar10" "vgg19" "./output/cifar10/vgg19/" --epochs_warmup 10 --logname "espn_rewind_cifar10_vgg19_995percent.txt" --lr 0.1 --alpha 0.00012 --keep_ratio 0.005`
+
+#### CIFAR-100/VGG19
+
+ESPN_Finetune p=95%: `python prune_espn_finetune.py "cifar100" "vgg19" "./output/cifar100/vgg19/" "./models/cifar100/vgg19/checkpoint.pth.tar" --logname "espn_finetune_cifar100_vgg19_95percent.txt" --lr 0.05 --alpha 8e-5 --keep_ratio 0.05`
+
+ESPN_Finetune p=98%: `python prune_espn_finetune.py "cifar100" "vgg19" "./output/cifar100/vgg19/" "./models/cifar100/vgg19/checkpoint.pth.tar" --logname "espn_finetune_cifar100_vgg19_98percent.txt" --lr 0.05 --alpha 0.0001 --keep_ratio 0.02`
+
+ESPN_Finetune p=99%: `python prune_espn_finetune.py "cifar100" "vgg19" "./output/cifar100/vgg19/" "./models/cifar100/vgg19/checkpoint.pth.tar" --logname "espn_finetune_cifar100_vgg19_99percent.txt" --lr 0.05 --alpha 0.00015 --keep_ratio 0.01`
+
+ESPN_Finetune p=99.5%: `python prune_espn_finetune.py "cifar100" "vgg19" "./output/cifar100/vgg19/" "./models/cifar100/vgg19/checkpoint.pth.tar" --logname "espn_finetune_cifar100_vgg19_995percent.txt" --lr 0.05 --alpha 0.0003 --keep_ratio 0.005`
+
+ESPN_Rewind p=95%: `python prune_espn_rewind.py "cifar100" "vgg19" "./output/cifar100/vgg19/" --epochs_warmup 10 --logname "espn_rewind_cifar100_vgg19_95percent.txt" --lr 0.1 --alpha 8e-5 --keep_ratio 0.05`
+
+ESPN_Rewind p=98%: `python prune_espn_rewind.py "cifar100" "vgg19" "./output/cifar100/vgg19/" --epochs_warmup 10 --logname "espn_rewind_cifar100_vgg19_98percent.txt" --lr 0.1 --alpha 8e-5 --keep_ratio 0.02`
+
+ESPN_Rewind p=99%: `python prune_espn_rewind.py "cifar100" "vgg19" "./output/cifar100/vgg19/" --epochs_warmup 10 --logname "espn_rewind_cifar100_vgg19_99percent.txt" --lr 0.1 --alpha 0.00013 --keep_ratio 0.01`
+
+ESPN_Rewind p=99.5%: `python prune_espn_rewind.py "cifar100" "vgg19" "./output/cifar100/vgg19/" --epochs_warmup 10 --logname "espn_rewind_cifar100_vgg19_995percent.txt" --lr 0.1 --alpha 0.00013 --keep_ratio 0.005`
+
+#### CIFAR-10/ResNet32
+
+ESPN_Finetune p=95%: `python prune_espn_finetune.py "cifar10" "resnet32" "./output/cifar10/resnet32/" "./models/cifar10/resnet32/checkpoint.pth.tar" --logname "espn_finetune_cifar10_resnet32_95percent.txt" --lr 0.1 --alpha 8e-5 --keep_ratio 0.05`
+
+ESPN_Finetune p=98%: `python prune_espn_finetune.py "cifar10" "resnet32" "./output/cifar10/resnet32/" "./models/cifar10/resnet32/checkpoint.pth.tar" --logname "espn_finetune_cifar10_resnet32_98percent.txt" --lr 0.1 --alpha 0.0001 --keep_ratio 0.02`
+
+ESPN_Finetune p=99%: `python prune_espn_finetune.py "cifar10" "resnet32" "./output/cifar10/resnet32/" "./models/cifar10/resnet32/checkpoint.pth.tar" --logname "espn_finetune_cifar10_resnet32_99percent.txt" --lr 0.1 --alpha 0.0002 --keep_ratio 0.01`
+
+ESPN_Finetune p=99.5%: `python prune_espn_finetune.py "cifar10" "resnet32" "./output/cifar10/resnet32/" "./models/cifar10/resnet32/checkpoint.pth.tar" --logname "espn_finetune_cifar10_resnet32_995percent.txt" --lr 0.1 --alpha 0.0003 --keep_ratio 0.005`
+
+ESPN_Rewind p=95%: `python prune_espn_rewind.py "cifar10" "resnet32" "./output/cifar10/resnet32/" --epochs_warmup 10 --logname "espn_rewind_cifar10_resnet32_95percent.txt" --lr 0.1 --alpha 8e-5 --keep_ratio 0.05`
+
+ESPN_Rewind p=98%: `python prune_espn_rewind.py "cifar10" "resnet32" "./output/cifar10/resnet32/" --epochs_warmup 10 --logname "espn_rewind_cifar10_resnet32_98percent.txt" --lr 0.1 --alpha 8e-5 --keep_ratio 0.02`
+
+ESPN_Rewind p=99%: `python prune_espn_rewind.py "cifar10" "resnet32" "./output/cifar10/resnet32/" --epochs_warmup 10 --logname "espn_rewind_cifar10_resnet32_99percent.txt" --lr 0.1 --alpha 0.00013 --keep_ratio 0.01`
+
+ESPN_Rewind p=99.5%: `python prune_espn_rewind.py "cifar10" "resnet32" "./output/cifar10/resnet32/" --epochs_warmup 10 --logname "espn_rewind_cifar10_resnet32_995percent.txt" --lr 0.1 --alpha 0.00012 --keep_ratio 0.005`
+
+#### CIFAR-100/ResNet32
+
+ESPN_Finetune p=95%: `python prune_espn_finetune.py "cifar100" "resnet32" "./output/cifar100/resnet32/" "./models/cifar100/resnet32/checkpoint.pth.tar" --logname "espn_finetune_cifar100_resnet32_95percent.txt" --lr 0.1 --alpha 0.0001 --keep_ratio 0.05`
+
+ESPN_Finetune p=98%: `python prune_espn_finetune.py "cifar100" "resnet32" "./output/cifar100/resnet32/" "./models/cifar100/resnet32/checkpoint.pth.tar" --logname "espn_finetune_cifar100_resnet32_98percent.txt" --lr 0.1 --alpha 0.0002 --keep_ratio 0.02`
+
+ESPN_Finetune p=99%: `python prune_espn_finetune.py "cifar100" "resnet32" "./output/cifar100/resnet32/" "./models/cifar100/resnet32/checkpoint.pth.tar" --logname "espn_finetune_cifar100_resnet32_99percent.txt" --lr 0.1 --alpha 0.0004 --keep_ratio 0.01`
+
+ESPN_Finetune p=99.5%: `python prune_espn_finetune.py "cifar100" "resnet32" "./output/cifar100/resnet32/" "./models/cifar100/resnet32/checkpoint.pth.tar" --logname "espn_finetune_cifar100_resnet32_995percent.txt" --lr 0.1 --alpha 0.00055 --keep_ratio 0.005`
+
+ESPN_Rewind p=95%: `python prune_espn_rewind.py "cifar100" "resnet32" "./output/cifar100/resnet32/" --epochs_warmup 10 --logname "espn_rewind_cifar100_resnet32_95percent.txt" --lr 0.1 --alpha 0.0001 --keep_ratio 0.05`
+
+ESPN_Rewind p=98%: `python prune_espn_rewind.py "cifar100" "resnet32" "./output/cifar100/resnet32/" --epochs_warmup 10 --logname "espn_rewind_cifar100_resnet32_98percent.txt" --lr 0.1 --alpha 0.00015 --keep_ratio 0.02`
+
+ESPN_Rewind p=99%: `python prune_espn_rewind.py "cifar100" "resnet32" "./output/cifar100/resnet32/" --epochs_warmup 10 --logname "espn_rewind_cifar100_resnet32_99percent.txt" --lr 0.1 --alpha 0.0003 --keep_ratio 0.01`
+
+ESPN_Rewind p=995%: `python prune_espn_rewind.py "cifar100" "resnet32" "./output/cifar100/resnet32/" --epochs_warmup 10 --logname "espn_rewind_cifar100_resnet32_995percent.txt" --lr 0.1 --alpha 0.00055 --keep_ratio 0.005`
 
 
