@@ -2,6 +2,10 @@
 
 This is the code used to generate results for our NeurIPS submission.
 
+<p>
+<img src="figures/figure1.png" height="224">
+</p>
+
 ### Setup
 
 To setup the environment, use the requirements.txt file. 
@@ -34,7 +38,7 @@ We include the codes for experiments conducted in the papers as following:
 
 ### Experiments
 
-We list the script to run for the experiments we collected in our paper. ESPN-Finetune requires the `models` file to run it.
+We list the script to run for the experiments we collected in our paper. ESPN-Finetune requires the `models` file to run it. Tiny-ImageNet and ImageNet needs to be downloaded separately and modify the directory in `datasets.py`.
 
 ### MNIST/Fashion-MNIST
 
@@ -174,6 +178,52 @@ ESPN_Rewind p=98%: `python prune_espn_rewind.py "cifar100" "resnet32" "./output/
 
 ESPN_Rewind p=99%: `python prune_espn_rewind.py "cifar100" "resnet32" "./output/cifar100/resnet32/" --epochs_warmup 10 --logname "espn_rewind_cifar100_resnet32_99percent.txt" --lr 0.1 --alpha 0.0003 --keep_ratio 0.01`
 
-ESPN_Rewind p=995%: `python prune_espn_rewind.py "cifar100" "resnet32" "./output/cifar100/resnet32/" --epochs_warmup 10 --logname "espn_rewind_cifar100_resnet32_995percent.txt" --lr 0.1 --alpha 0.00055 --keep_ratio 0.005`
+ESPN_Rewind p=99.5%: `python prune_espn_rewind.py "cifar100" "resnet32" "./output/cifar100/resnet32/" --epochs_warmup 10 --logname "espn_rewind_cifar100_resnet32_995percent.txt" --lr 0.1 --alpha 0.00055 --keep_ratio 0.005`
 
+### Tiny-ImageNet
 
+#### Tiny-ImageNet/VGG19
+
+ESPN_Finetune p=90%: `python prune_espn_finetune.py "tiny_imagenet" "vgg19" "./output/tiny_imagenet/vgg19/" "./models/tiny_imagenet/vgg19/checkpoint.pth.tar" --workers 8 --alpha 8e-5 --keep_ratio 0.1 --logname "espn_finetune_tiny_imagenet_vgg19_90percent.txt"`
+
+ESPN_Finetune p=95%: `python prune_espn_finetune.py "tiny_imagenet" "vgg19" "./output/tiny_imagenet/vgg19/" "./models/tiny_imagenet/vgg19/checkpoint.pth.tar" --workers 8 --alpha 8e-5 --keep_ratio 0.05 --logname "espn_finetune_tiny_imagenet_vgg19_95percent.txt"`
+
+ESPN_Finetune p=98%: `python prune_espn_finetune.py "tiny_imagenet" "vgg19" "./output/tiny_imagenet/vgg19/" "./models/tiny_imagenet/vgg19/checkpoint.pth.tar" --workers 8 --alpha 0.00012 --keep_ratio 0.02 --logname "espn_finetune_tiny_imagenet_vgg19_98percent.txt"`
+
+ESPN_Rewind p=90%: `python prune_espn_rewind.py "tiny_imagenet" "vgg19" "./output/tiny_imagenet/vgg19/" --workers 8 --alpha 8e-5 --keep_ratio 0.1 --logname "espn_rewind_tiny_imagenet_vgg19_90percent.txt"`
+
+ESPN_Rewind p=95%: `python prune_espn_rewind.py "tiny_imagenet" "vgg19" "./output/tiny_imagenet/vgg19/" --workers 8 --alpha 8e-5 --keep_ratio 0.05 --logname "espn_rewind_tiny_imagenet_vgg19_95percent.txt"`
+
+ESPN_Rewind p=98%: `python prune_espn_rewind.py "tiny_imagenet" "vgg19" "./output/tiny_imagenet/vgg19/" --workers 8 --alpha 0.00012 --keep_ratio 0.02 --logname "espn_rewind_tiny_imagenet_vgg19_98percent.txt"`
+
+#### Tiny-ImageNet/ResNet32
+
+ESPN_Finetune p=90%: `python ./research/espn/code/prune_espn_finetune.py "tiny_imagenet" "resnet32" "./output/tiny_imagenet/resnet32/" "./models/tiny_imagenet/resnet32/checkpoint.pth.tar" --workers 8 --alpha 8e-5 --keep_ratio 0.1 --logname "espn_finetune_tiny_imagenet_resnet32_90percent.txt"`
+
+ESPN_Finetune p=95%: `python ./research/espn/code/prune_espn_finetune.py "tiny_imagenet" "resnet32" "./output/tiny_imagenet/resnet32/" "./models/tiny_imagenet/resnet32/checkpoint.pth.tar" --workers 8 --alpha 8e-5 --keep_ratio 0.05 --logname "espn_finetune_tiny_imagenet_resnet32_95percent.txt"`
+
+ESPN_Finetune p=98%: `python ./research/espn/code/prune_espn_finetune.py "tiny_imagenet" "resnet32" "./output/tiny_imagenet/resnet32/" "./models/tiny_imagenet/resnet32/checkpoint.pth.tar" --workers 8 --alpha 0.0002 --keep_ratio 0.02 --logname "espn_finetune_tiny_imagenet_resnet32_98percent.txt"`
+
+ESPN_Rewind p=90%: `python ./research/espn/code/prune_espn_rewind.py "tiny_imagenet" "resnet32" "./output/tiny_imagenet/resnet32/" --workers 8 --alpha 8e-5 --keep_ratio 0.1 --logname "espn_rewind_tiny_imagenet_resnet32_90percent.txt"`
+
+ESPN_Rewind p=95%: `python ./research/espn/code/prune_espn_rewind.py "tiny_imagenet" "resnet32" "./output/tiny_imagenet/resnet32/" --workers 8 --alpha 8e-5 --keep_ratio 0.05 --logname "espn_rewind_tiny_imagenet_resnet32_95percent.txt"`
+
+ESPN_Rewind p=98%: `python ./research/espn/code/prune_espn_rewind.py "tiny_imagenet" "resnet32" "./output/tiny_imagenet/resnet32/" --workers 8 --alpha 8e-5 --keep_ratio 0.02 --logname "espn_rewind_tiny_imagenet_resnet32_98percent.txt"`
+
+### ImageNet/ResNet50
+
+ESPN_Finetune p=80%: `python prune_espn_imagenet_finetune.py "/directory/to/imagenet/" "/directory/to/imagenet/" "resnet50" "./output/resnet50" --keep_mask "finetune_20percent_keep_masks.pt" --save_model "finetune_20percent_save_model.pt" --logname "finetune_20percent_resnet50.txt" --alpha 8e-5 --keep_ratio 0.2 --batch 128`
+
+ESPN_Finetune Train p=80%: `python train_imagenet_finetune.py "/directory/to/imagenet/" "/directory/to/imagenet/" -a "resnet50" --savedir "/directory/to/mask/and/model/" --outdir "./output/resnet50" --keep_masks "finetune_20percent_keep_masks.pt" --save_model "finetune_20percent_save_model.pt" --lr 0.01 --epochs 60 --batch 768 --discription "Finetune 20percent imagenet resnet50" --workers 20`
+
+ESPN_Finetune p=90%: `python prune_espn_imagenet_finetune.py "/directory/to/imagenet/" "/directory/to/imagenet/" "resnet50" "./output/resnet50" --keep_mask "finetune_10percent_keep_masks.pt" --save_model "finetune_10percent_save_model.pt" --logname "finetune_10percent_resnet50.txt" --alpha 8e-5 --keep_ratio 0.1 --batch 128`
+
+ESPN_Finetune Train p=90%: `python train_imagenet_finetune.py "/directory/to/imagenet/" "/directory/to/imagenet/" -a "resnet50" --savedir "/directory/to/mask/and/model/" --outdir "./output/resnet50" --keep_masks "finetune_10percent_keep_masks.pt" --save_model "finetune_10percent_save_model.pt" --lr 0.01 --epochs 60 --batch 768 --discription "Finetune 10percent imagenet resnet50" --workers 20`
+
+ESPN_Rewind p=80%: `python prune_espn_imagenet_rewind.py "/directory/to/imagenet/" "/directory/to/imagenet/" "resnet50" "./output/resnet50" --keep_mask "rewind_20percent_keep_masks.pt" --save_model "rewind_20percent_save_model.pt" --logname "rewind_20percent_resnet50.txt" --alpha 8e-5 --keep_ratio 0.2  --batch 128 --epochs_warmup 10`
+
+ESPN_Rewind Train p=80%: `python train_imagenet_rewind.py "/directory/to/imagenet/" "/directory/to/imagenet/" -a "resnet50" --savedir "/directory/to/mask/and/model/" --outdir "./output/resnet50" --keep_masks "rewind_20percent_keep_masks.pt" --save_model "rewind_20percent_save_model.pt" --batch 768 --discription "Rewind 20percent imagnet resnet50" --workers 20`
+
+ESPN_Rewind p=90%: `python prune_espn_imagenet_rewind.py "/directory/to/imagenet/" "/directory/to/imagenet/" "resnet50" "./output/resnet50" --keep_mask "rewind_10percent_keep_masks.pt" --save_model "rewind_10percent_save_model.pt" --logname "rewind_10percent_resnet50.txt" --alpha 8e-5 --keep_ratio 0.1  --batch 128 --epochs_warmup 10`
+
+ESPN_Rewind Train p=90%: `python train_imagenet_rewind.py "/directory/to/imagenet/" "/directory/to/imagenet/" -a "resnet50" --savedir "/directory/to/mask/and/model/" --outdir "./output/resnet50" --keep_masks "rewind_10percent_keep_masks.pt" --save_model "rewind_10percent_save_model.pt" --batch 768 --discription "Rewind 10percent imagnet resnet50" --workers 20`
