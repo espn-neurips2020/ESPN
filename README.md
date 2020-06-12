@@ -3,7 +3,7 @@
 This is the code used to generate results for our NeurIPS submission.
 
 <p>
-<img src="figures/figure1.png" height="224">
+<img src="figures/figure1.png" height="300">
 </p>
 
 ### Setup
@@ -38,7 +38,7 @@ We include the codes for experiments conducted in the papers as following:
 
 ### Experiments
 
-We list the script to run for the experiments we collected in our paper. ESPN-Finetune requires the `models` file to run it. Tiny-ImageNet and ImageNet needs to be downloaded separately and modify the directory in `datasets.py`.
+We list the script to run for the experiments we collected in our paper. ESPN-Finetune requires the `models` file to run it (Download from [HERE](https://drive.google.com/drive/folders/18wHTHOgAxMZhMKGqKzXmPGHiTbZIN7GN?usp=sharing)). Tiny-ImageNet and ImageNet needs to be downloaded separately and modify the directory in `datasets.py`.
 
 ### MNIST/Fashion-MNIST
 
