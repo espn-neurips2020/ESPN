@@ -114,7 +114,7 @@ def _cifar100(split: str) -> Dataset:
 
 def _imagenet(split: str) -> Dataset:
     if split == "train":
-        subdir = os.path.join("Directory for Imagenet", "train")
+        subdir = os.path.join("path/to/imagenet", "train")
         transform = transforms.Compose([
             transforms.RandomResizedCrop(224),
             transforms.RandomHorizontalFlip(),
@@ -122,7 +122,7 @@ def _imagenet(split: str) -> Dataset:
             transforms.Normalize(_IMAGENET_MEAN, _IMAGENET_STDDEV)
         ])
     elif split == "test":
-        subdir = os.path.join("Directory for Imagenet", "val")
+        subdir = os.path.join("path/to/imagenet", "val")
         transform = transforms.Compose([
             transforms.Resize(256),
             transforms.CenterCrop(224),
@@ -133,7 +133,7 @@ def _imagenet(split: str) -> Dataset:
 
 def _tinyimagenet(split: str) -> Dataset:
     if split == "train":
-        subdir = os.path.join("Directory for Tiny-Imagenet", "train")
+        subdir = os.path.join("path/to/tiny-imagenet", "train")
         transform = transforms.Compose([
             transforms.RandomCrop(64, padding=4),
             transforms.RandomHorizontalFlip(),
@@ -141,7 +141,7 @@ def _tinyimagenet(split: str) -> Dataset:
             transforms.Normalize(_TINY_MEAN, _TINY_STD)
         ])
     elif split == "test":
-        subdir = os.path.join(("Directory for Tiny-Imagenet", "val")
+        subdir = os.path.join("path/to/tiny-imagenet", "val")
         transform = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize(_TINY_MEAN, _TINY_STD)
